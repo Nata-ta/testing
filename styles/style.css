@@ -593,7 +593,7 @@ select::-ms-expand {
 }
 @media (max-width: 1024px) {
   .about__col-cross {
-    right: 34px;
+    right: 130px;
     top: -310px;
   }
 }
