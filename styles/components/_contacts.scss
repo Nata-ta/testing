@@ -8,8 +8,11 @@
     background-repeat: no-repeat;
     @include b(tablet) {
         padding: 50px 0;
-        background-image: none;
+        background-position-x: right;
     }
+    @include b(mobile) {
+        background-position-x: 83%;
+     }
 
     &__caption {
         font-weight: 700;

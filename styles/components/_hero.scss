@@ -89,6 +89,12 @@
         @include b(mobile) {
             z-index: 3;
         }
+
+        &-img {
+            @include b(mobile) {
+               width: 107px;
+            }
+        }
     }
 
     &__nav {
@@ -178,6 +184,9 @@
         @include b(mobile) {
             left: 40%;
         }       
+        @include b(mobile-sm) {
+            left: 27%;
+        }
 
         &-row {
             margin-bottom: 25px;
@@ -195,7 +204,7 @@
     }
 
     &__body {
-        padding: 0 20px 100px;
+        padding: 0 20px;
         background-image: url(../images/hero-bg.png);
         background-size: cover;
         background-repeat: no-repeat;
@@ -286,6 +295,10 @@
            height: 101px;
            top: 169px;
         }
+        @include b(mobile-sm) {
+            top: 51px;
+         }
+ 
 
         & svg {
             width: 100%;
