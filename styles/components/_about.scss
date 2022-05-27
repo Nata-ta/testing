@@ -1,0 +1,450 @@
+@import '../common/vars';
+
+.about {
+    padding: 120px 0;
+    background: linear-gradient(90deg, $cultured 0%, rgba(248, 248, 248, 0) 75%);
+    z-index: -1;
+    @include b(tablet) {
+        padding: 50px 0;
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: 54px;
+        color: $secondary-color;
+        margin-bottom: 71px;
+        @include b(mobile) {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1;
+        @include b(tablet) {
+            display: block;
+        }
+    }
+
+    &__col {
+        padding: 0 10px;
+        width: 65%;
+        position: relative;
+        z-index: 1;
+        @include b(tablet) {
+            width: 100%;
+        }
+
+        &-cross {
+            position: absolute;
+            right: 250px;
+            top: -186px;
+            z-index: 0;
+            @include b(tablet) {
+                right: 34px;
+                top: -310px;
+            }
+            @include b(mobile) {
+                right: 34px;
+                top: -200px;
+                width: 63px;
+                height: 63px;
+            }
+        }
+    }
+
+    &__info {
+        width: 30%;
+        padding-left: 70px;
+        position: relative;
+        z-index: 1;
+        @include b(tablet) {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        &-cross {
+            position: absolute;
+            left: 100px;
+            bottom: -236px;
+            z-index: 0;
+            @include b(tablet) {
+                display: none;
+            }
+            
+        }
+        
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 34px;
+        color: $secondary-color;
+        margin-bottom: 18px;
+        @include b(mobile) {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__descr {
+        font-size: 24px;
+        max-width: 430px;
+        @include b(tablet) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        @include b(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__row {
+        width: 626px;
+        background-color: $anti-flash-white;
+        border-radius: 61px;
+        margin-bottom: 71px;
+        display: flex;
+        justify-content: space-between;
+        @include b(tablet) {
+           margin: 0 auto 71px;
+        }
+        @include b(mobile) {
+            width: 100%;
+         }
+    }
+
+    &__radio {
+        display: inline-block;
+
+        & input {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            visibility: hidden;
+
+            &:checked + span {
+                color: $white-color;
+                background-color: $btn-color;
+            }
+
+            &:checked + span::before {
+                border-color: $white-color;
+            }
+
+            &:checked + span::after {
+                visibility: visible;
+                overflow: visible;
+                opacity: 1;
+            }
+        }
+
+        & span {
+            display: block;
+            position: relative;
+            font-size: 24px;
+            font-weight: 400;
+            color: $secondary-color;
+            cursor: pointer;
+            padding: 20px 41px 20px 87px;
+            border-radius: 61px;
+            transition: $trs;
+            @include b(mobile) {
+                font-size: 18px;
+                padding: 8px 11px 8px 40px;
+             }
+             @include b(mobile-sm) {
+                font-size: 18px;
+                padding: 8px 11px 8px 40px;
+             }
+
+            &::after, &::before {
+                position: absolute;
+                content: '';
+                border-radius: 50%;
+                transition: $trs;
+            }
+
+            &::before {
+                width: 25px;
+                height: 25px;
+                border: 1px solid $chinese-black;
+                left: 44px;
+                top: 20px;
+                @include b(mobile) {
+                    width: 22px;
+                    height: 22px;
+                    left: 9px;
+                    top: 8px;
+                 }
+            }
+
+            &::after {
+                width: 19px;
+                height: 19px;
+                background-color: $white-color;
+                left: 47px;
+                top: 23px;
+                visibility: hidden;
+                overflow: hidden;
+                opacity: 0;
+                @include b(mobile) {
+                    width: 16px;
+                    height: 16px;
+                    left: 12px;
+                    top: 11px;
+                 }
+            }
+        }
+    }
+
+    &__team {
+        margin-bottom: 60px;
+    }
+
+    &__card {
+        max-width: 430px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 345px;
+        object-fit: cover;
+
+        &-box {
+            border-radius: 5px;
+            border: 1px solid $spanish-gray;
+            overflow: hidden;
+            line-height: 0;
+            position: relative;
+
+            &:hover .about__img-info {
+                display: flex;
+            }
+        }
+
+        &-info {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            line-height: 1.1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, .5);
+            display: none;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 30px;
+        color: $white-color;
+        margin-bottom: 10px;
+    }
+
+    &__position {
+        font-weight: 400;
+        font-size: 24px;
+        color: $flash-white;
+        margin-bottom: 30px;
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__pagination {
+
+        position: relative;
+        &.swiper-pagination-progressbar {
+            width: 70%;
+            height: 4px;
+            line-height: 0;
+            background-color: transparent;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 3px;
+            height: 1px;
+            width: 100%;
+            background-color: $granite-gray;
+            z-index: -1;
+        }
+
+        & > .swiper-pagination-progressbar-fill {
+            border: 4px solid $eerie-black;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+          }
+    }
+
+    &__btns {
+        display: flex;
+    }
+
+    &__button {
+        width: 50px;
+        height: 50px;
+        border: 1px solid $gainsboro;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 15px;
+
+        &:active {
+            background-color: $cultured;
+        }
+
+        &:active .about__button-arrow {
+            color: $secondary-color;
+        }
+
+        &-arrow {
+            color: $arrow-color;
+        }
+    }
+
+    &__modal {
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        position: fixed;
+        top: 0;
+        left: 0px;
+      
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+}
+
+.modal {
+
+    &__body {
+        max-width: 724px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: $white-color;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+        border-radius: 10px;
+        position: relative;
+        @include b(mobile) {
+            width: 100%;
+            margin: 0 20px;
+            padding: 10px;
+         }
+    }
+
+    &__item {
+        display: none;
+    }
+
+    &__close {
+        position: absolute;
+        right: -12px;
+        top: -12px;
+        width: 36px;
+        height: 36px;
+        border: 1px solid $gainsboro;
+        background-color: $cultured;
+        border-radius: 50%;
+        @include b(mobile) {
+            right: 10px;
+            top: 10px;
+         }
+    }
+
+    &__wrap {
+        display: flex;
+        margin-bottom: 20px;
+        @include b(mobile) {
+            display: block;
+         }
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &-box {
+            width: 50%;
+            display: block;
+            line-height: 0;
+            margin-right: 22px;
+            border: 1px solid $spanish-gray;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 30%;
+            @include b(mobile) {
+                margin-bottom: 20px;
+             }
+        }
+    }
+
+    &__descr {
+        width: 50%;
+        @include b(mobile) {
+            width: 100%;
+         }
+    }
+
+    &__col {
+        display: flex;
+    }
+
+    &__text {
+        width: 33%;
+        font-weight: 400;
+        font-size: 20px;
+        color: $davys-grey;
+        margin-bottom: 19px;
+        @include b(mobile) {
+            width: 36%;
+         }
+         @include b(mobile-sm) {
+            font-size: 16px;
+            width: 36%;
+         }
+    }
+
+    &__span {
+        padding: 7px 10px;
+        background-color: $cult-color;
+        border-radius: 7px;
+    }
+
+    &__row {
+        display: inline-block;
+        justify-content: space-around;
+        padding: 7px 10px;
+        background-color: $cult-color;
+        border-radius: 7px;
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 0 6px;
+    }
+
+    &__story {
+        font-size: 20px;
+        @include b(mobile) {
+            font-size: 16px;
+         }
+    }
+}

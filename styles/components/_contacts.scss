@@ -1,0 +1,101 @@
+@import '../common/vars';
+
+.contacts {
+    padding: 120px 0 284px;
+    background-color: $cultured;
+    background-image: url(../images/contact-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include b(tablet) {
+        padding: 50px 0;
+        background-image: none;
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: 54px;
+        color: $secondary-color;
+        margin-bottom: 90px;
+        @include b(mobile) {
+            margin-bottom: 22px;
+            font-size: 24px;
+         }
+    }
+
+    &__form {
+        max-width: 880px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+        @include b(mobile) {
+            margin: 0;
+         }
+    }
+
+    &__col {
+        width: 50%;
+        padding: 0 10px 10px;
+        @include b(mobile) {
+            width: 100%;
+            padding: 0 0 15px;
+         }
+    }
+
+    &__message {
+        margin-bottom: 34px;
+        @include b(mobile) {
+            width: 100%;
+         }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include b(mobile) {
+            flex-direction: column;
+         }
+    }
+
+    &__box {
+        @include b(mobile) {
+            width: 100%;
+         }
+    }
+
+    &__file {
+        display: none;
+    }
+
+    &__label {
+        display: block;
+        border: 1px solid $secondary-color;
+        border-radius: 7px;
+        background: transparent;
+        padding: 17px 52px;
+        color: $secondary-color;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        @include b(mobile) {
+            margin-bottom: 40px;
+         }
+    }
+
+    &__icon {
+        margin-right: 10px;
+    }
+
+    &__btn {
+        background-color: $secondary-color;
+        border-color: $secondary-color;
+
+        &:hover {
+            background-color: $secondary-color;
+            opacity: .6;
+        }
+    }
+}

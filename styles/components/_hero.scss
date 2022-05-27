@@ -1,0 +1,294 @@
+@import '../common/vars';
+
+.hero {
+    min-height: 100vh;
+    background-color: $bg-color;
+    position: relative;
+    z-index: 0;
+
+    &__bagel {
+        max-width: 1029px;
+    }
+
+    &__vector {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 292px; 
+    }
+
+    &__header {
+        padding: 30px 0;
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-btn {
+
+            &-menu {
+                width: 24px;
+                height: 21px;
+                position: relative;
+                display: none;
+                @include b(tablet) {
+                    display: block;
+                    z-index: 3;
+                }
+
+                &--open {
+                    position: fixed;
+                    right: 20px;
+        
+                    .hero__header-btn-line:nth-child(1) {
+                        transform: rotate(45deg);
+                        top: 9px;
+                        background-color: $white-color;
+                    }
+        
+                    .hero__header-btn-line:nth-child(2) {
+                        display: none;
+                    }
+        
+                    .hero__header-btn-line:nth-child(3) {
+                        transform: rotate(-45deg);
+                        top: 9px;
+                        background-color: $white-color;
+                    }
+                }
+            }
+
+            &-line {
+                position: absolute;
+                width: 24px;
+                height: 2px;
+                background-color: $white-color;
+                left: 0;
+                transition: $trs;
+        
+                &:nth-child(1) {
+                    top: 0;
+                }
+        
+                &:nth-child(2) {
+                    top: 9px;
+                }
+        
+                &:nth-child(3) {
+                    top: 18px;
+                }
+            }
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        line-height: 0;
+        @include b(mobile) {
+            z-index: 3;
+        }
+    }
+
+    &__nav {
+        transition: $trs;
+        position: relative;
+        @include b(tablet) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(105deg, rgba(122, 122, 122, .1) 2%, rgba(122, 122, 122, 0) 105%);
+            filter: drop-shadow(0 4px 4px rgba(50, 50, 50, .15));
+            backdrop-filter: blur(100px);
+            width: 320px;
+            z-index: 2;
+            padding: 134px 0;
+            transform: translateX(320px);
+        }
+        @include b(mobile) {
+            width: 100%;
+            transform: translateX(100%);
+        }
+
+        &--open {
+            transform: translateX(0);
+        }
+
+        &-list{
+            display: flex;
+            justify-content: space-between;
+            @include b(tablet) {
+                flex-direction: column;
+                justify-content: center;
+                text-align: left;
+            }
+        }
+
+        &-item {
+            padding: 0 15px;
+            @include b(tablet) {
+                padding: 0 20px;
+            }   
+        }
+
+        &-link {
+            display: inline-block;
+            font-weight: 400;
+            color: $white-color;
+            text-transform: uppercase;
+            line-height: 1.1;
+            position: relative;
+            @include b(tablet) {
+                font-weight: 700;
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: -2px;
+                width: 0;
+                height: 1px;
+                background-color: $white-color;
+                transition: $trs;
+                @include b(tablet) {
+                    height: 3px;
+                }
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+
+    &__socials {
+        display: none;
+        @include b(tablet) {
+            position: absolute;
+            bottom: 35px;
+            left: 25%;
+            display: flex;
+            flex-direction: column;
+        } 
+        @include b(mobile) {
+            left: 40%;
+        }       
+
+        &-row {
+            margin-bottom: 25px;
+        }
+
+        &-row > svg {
+            margin: 0 8px;
+        }
+
+        &-link {
+            display: inline-block;
+            color: $philippine-silver;
+            text-align: center;
+        }
+    }
+
+    &__body {
+        padding: 0 20px 100px;
+        background-image: url(../images/hero-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        position: relative;
+        z-index: 1;
+
+        &-wrap {
+            min-height: calc(100vh - 115px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-box {
+            max-width: 1268px;
+            padding: 72px 46px;
+            border-radius: 7px;
+            background: linear-gradient(105deg, rgba(122, 122, 122, .19) 2%, rgba(122, 122, 122, 0) 105%);
+            filter: drop-shadow(0 4px 4px rgba(50, 50, 50, .15));
+            backdrop-filter: blur(100px);
+            @include b(desktop) {
+                padding: 40px 46px;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 72px;
+        color: $white-color;
+        text-align: center;
+        margin-bottom: 40px;
+        @include b(mobile) {
+            font-size: 34px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__descr {
+        max-width: 742px;
+        margin: 0 auto;
+        font-size: 24px;
+        color: $white-color;
+        margin-bottom: 114px;
+        text-align: center;
+        @include b(mobile) {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__btn {
+        margin-right: 60px;
+        @include b(mobile) {
+            margin: 0 0 30px;
+        }
+
+        &-size {
+            @include b(mobile) {
+                justify-content: center;
+                width: 100%;
+            }
+            @include b(mobile-sm) {
+                font-size: 20px;
+                padding: 18px 60px;
+            }
+        }
+
+        &-box {
+            display: flex;
+            justify-content: center;
+            @include b(mobile) {
+                display: block;
+            }
+        }
+    }
+
+    &__circle {
+        position: absolute;
+        left: 21%;
+        top: -60px;
+        width: 256px;
+        height: 257px;
+        z-index: -1;
+        @include b(mobile) {
+           width: 100px;
+           height: 101px;
+           top: 169px;
+        }
+
+        & svg {
+            width: 100%;
+        }
+    }
+}

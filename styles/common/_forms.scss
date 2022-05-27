@@ -1,0 +1,45 @@
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    font-family: $main-ff;
+    font-size: 23px;
+    outline: none;
+    background-color: $white-color;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+    height: 64px;
+    padding: 0 21px;
+    transition: $trs;
+
+    &::placeholder {
+       color: $davys-grey;
+    }
+
+    &:focus {
+        box-shadow: 0 5px 8px rgba(0, 0, 0, .15);
+    }
+}
+
+textarea {
+    height: 222px;
+    resize: none;
+    padding: 20px 21px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-repeat: no-repeat;
+    background-size: 12px 7px;
+    background-position: calc(100% - 20px) 30px;
+    background-image: url(../../images/vector.png);
+    padding-right: 30px;
+    color: $davys-grey;
+}
+
+select::-ms-expand {
+    display: none;
+}

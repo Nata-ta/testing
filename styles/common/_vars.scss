@@ -1,0 +1,56 @@
+$main-fz: 16px;
+$main-fw: 300;
+$main-ff: 'Ubuntu', Arial, Helvetica, sans-serif;
+
+$main-color: #3D3D3D;
+$secondary-color: #101020;
+$white-color: #fff;
+$black-color: #000;
+$bg-color: #17191D;
+$lotion-color:#FBFBFB;
+$cultured: #F8F8F8;
+$gainsboro: #DEDEDE;
+$anti-flash-white: #F0F0F0;
+$chinese-black: #09121F;
+$spanish-gray: #9A9A9A;
+$granite-gray: #676767;
+$eerie-black: #17191D;
+$arrow-color: rgba(16, 16, 32, 0.5);
+$flash-white: #F2F2F2;
+$davys-grey: #585858;
+$cult-color: #F4F4F4;
+$philippine-silver: #B1B1B1;
+
+$btn-color: #FF0B53;
+
+$trs: all .3s;
+
+$mobile-low: 479px;
+$mobile-width: 767px;
+$tablet-width: 1024px;
+$desktop-width: 1366px;
+
+@mixin b($breakpoints) {
+  @if ($breakpoints == desktop) {
+    @media (max-width: #{$desktop-width}) {
+      @content
+      }
+    }
+  @if ($breakpoints == tablet) {
+    @media (max-width: #{$tablet-width}) {
+      @content
+    }
+  } @else if ($breakpoints == mobile) {
+    @media (max-width: #{$mobile-width}) {
+      @content
+    }
+  } @else if ($breakpoints == mobile-sm) {
+    @media (max-width: #{$mobile-low}) {
+      @content
+    }
+  } @else {
+    @media (max-width: $breakpoints + px) {
+      @content
+      }
+    }
+}

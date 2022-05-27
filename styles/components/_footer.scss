@@ -1,0 +1,105 @@
+@import '../common/vars';
+
+.footer {
+    padding: 120px 0;
+    background-color: $bg-color;
+    position: relative;
+    z-index: -1;
+    @include b(tablet) {
+        padding: 50px 0;
+    }
+
+    &__background {
+        position: absolute;
+        right: 70px;
+        top: 73px;
+        z-index: -1;
+        @include b(tablet) {
+            top: 203px;
+        }
+        @include b(mobile) {
+            display: none;
+        }
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: 54px;
+        color: $white-color;
+        margin-bottom: 90px;
+        @include b(mobile) {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        @include b(tablet) {
+            display: block;
+        }
+    }
+
+    &__col {
+        width: 33%;
+        @include b(tablet) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 30px;
+        color: $white-color;
+        position: relative;
+        margin-bottom: 30px;
+        @include b(mobile) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 110%;
+            height: 2px;
+            background-color: #FF0B53;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        @include b(mobile) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__icon {
+        margin-right: 15px;
+    }
+
+    &__link {
+        display: inline-block;
+        color: $white-color;
+        font-weight: 400;
+        font-size: 20px;
+        @include b(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__box {
+        display: flex;
+    }
+
+    &__social {
+        display: inline-block;
+        margin-right: 15px;
+    }
+}
