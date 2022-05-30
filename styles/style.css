@@ -1177,7 +1177,7 @@ select::-ms-expand {
 .footer {
   padding: 120px 0;
   background-color: #17191D;
-  background-image: url(../../images/footer-bg.png);
+  background-image: url(../images/footer-bg.png);
   background-repeat: no-repeat;
   background-position: 94% 50%;
 }
