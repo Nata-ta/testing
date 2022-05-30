@@ -172,7 +172,7 @@ select::-ms-expand {
   }
 }
 .hero__header-btn-menu--open {
-  position: fixed;
+  position: absolute;
   right: 20px;
   z-index: 1;
 }
