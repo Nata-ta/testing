@@ -1,24 +1,24 @@
 @font-face {
   font-family: "Ubuntu";
-  src: url("../../fonts/Ubuntu-Light.woff2") format("woff2"), url("../../fonts/Ubuntu-Light.woff") format("woff");
+  src: url("../fonts/Ubuntu-Light.woff2") format("woff2"), url("../fonts/Ubuntu-Light.woff") format("woff");
   font-style: normal;
   font-weight: 300;
 }
 @font-face {
   font-family: "Ubuntu";
-  src: url("../../fonts/Ubuntu-Regular.woff2") format("woff2"), url("../../fonts/Ubuntu-Regular.woff") format("woff");
+  src: url("../fonts/Ubuntu-Regular.woff2") format("woff2"), url("../fonts/Ubuntu-Regular.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: "Ubuntu";
-  src: url("../../fonts/Ubuntu-Medium.woff2") format("woff2"), url("../../fonts/Ubuntu-Medium.woff") format("woff");
+  src: url("../fonts/Ubuntu-Medium.woff2") format("woff2"), url("../fonts/Ubuntu-Medium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
 }
 @font-face {
   font-family: "Ubuntu";
-  src: url("../../fonts/Ubuntu-Bold.woff2") format("woff2"), url("../../fonts/Ubuntu-Bold.woff") format("woff");
+  src: url("../fonts/Ubuntu-Bold.woff2") format("woff2"), url("../fonts/Ubuntu-Bold.woff") format("woff");
   font-style: normal;
   font-weight: 700;
 }
@@ -124,7 +124,7 @@ select {
   background-repeat: no-repeat;
   background-size: 12px 7px;
   background-position: calc(100% - 20px) 30px;
-  background-image: url(../../images/vector.png);
+  background-image: url(../images/vector.png);
   padding-right: 30px;
   color: #585858;
 }
