@@ -116,16 +116,21 @@
             background-color: $white-color;
             border: 1px solid $gainsboro;
             border-radius: 10px;
+            transition: $trs;
             @include b(desktop) {
-                width: 33%;
+                width: 28%;
             }
             @include b(tablet) {
                 width: 47%;
-                margin: 8px;
+                margin: 7px;
             }
             @include b(mobile) {
                 width: 45%;
                 height: 101px;
+            }
+
+            &:hover {
+                box-shadow: 0 8px 10px rgba(0, 0, 0, .2);
             }
         }
     }

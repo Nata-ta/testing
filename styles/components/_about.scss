@@ -3,7 +3,6 @@
 .about {
     padding: 120px 0;
     background: linear-gradient(90deg, $cultured 0%, rgba(248, 248, 248, 0) 75%);
-    z-index: -1;
     @include b(tablet) {
         padding: 50px 0;
     }
@@ -23,58 +22,64 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        z-index: 1;
+        position: relative;
         @include b(tablet) {
             display: block;
         }
     }
 
-    &__col {
-        padding: 0 10px;
-        width: 65%;
-        position: relative;
-        z-index: 1;
-        @include b(tablet) {
-            width: 100%;
-        }
+    &__leftcros {
+        width: 100%;
 
-        &-cross {
+        &-box {
             position: absolute;
-            right: 250px;
-            top: -186px;
-            z-index: 0;
+            left: 100px;
+            bottom: -75px;
+            max-width: 172px;
+            @include b(tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__rigthcros {
+        width: 100%;
+
+        &-box {
+            position: absolute;
+            right: 125px;
+            top: -180px;
+            max-width: 172px;
+            @include b(desktop) {
+                right: 250px;
+            }
             @include b(tablet) {
                 right: 130px;
-                top: -310px;
+                top: 0;
             }
             @include b(mobile) {
                 right: 34px;
-                top: -200px;
+                top: -53px;
                 width: 63px;
                 height: 63px;
             }
         }
     }
 
+    &__col {
+        padding: 0 10px;
+        width: 65%;
+        @include b(tablet) {
+            width: 100%;
+        }
+    }
+
     &__info {
         width: 30%;
         padding-left: 70px;
-        position: relative;
-        z-index: 1;
         @include b(tablet) {
             width: 100%;
             padding: 0 20px;
-        }
-
-        &-cross {
-            position: absolute;
-            left: 100px;
-            bottom: -236px;
-            z-index: 0;
-            @include b(tablet) {
-                display: none;
-            }
-            
         }
         
     }
@@ -145,6 +150,7 @@
         & span {
             display: block;
             position: relative;
+            text-align: center;
             font-size: 24px;
             font-weight: 400;
             color: $secondary-color;
@@ -276,7 +282,6 @@
             height: 1px;
             width: 100%;
             background-color: $granite-gray;
-            z-index: -1;
         }
 
         & > .swiper-pagination-progressbar-fill {
@@ -320,11 +325,10 @@
         position: fixed;
         top: 0;
         left: 0px;
-      
+        z-index: 1;
         display: none;
         justify-content: center;
         align-items: center;
-        z-index: 1;
     }
 }
 
@@ -358,9 +362,15 @@
         border: 1px solid $gainsboro;
         background-color: $cultured;
         border-radius: 50%;
+        transition: $trs;
         @include b(mobile) {
             right: 10px;
             top: 10px;
+         }
+
+         &:hover {
+             background-color: $gainsboro;
+             color: $white-color;
          }
     }
 
@@ -429,15 +439,20 @@
     }
 
     &__row {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         justify-content: space-around;
+        width: 50%;
         padding: 7px 10px;
-        background-color: $cult-color;
         border-radius: 7px;
+        background-color: $cult-color;
+        @include b(mobile-sm) {
+            width: 60%;
+         }
+        
     }
 
     &__link {
-        display: inline-block;
         padding: 0 6px;
     }
 

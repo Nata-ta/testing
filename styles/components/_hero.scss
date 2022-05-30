@@ -1,24 +1,28 @@
 @import '../common/vars';
 
 .hero {
+    padding: 30px 0;
     min-height: 100vh;
     background-color: $bg-color;
     position: relative;
     z-index: 0;
 
     &__bagel {
-        max-width: 1029px;
-    }
-
-    &__vector {
-        position: absolute;
-        bottom: 0;
         width: 100%;
-        height: 292px; 
+
+        &-box {
+            position: absolute;
+            left: 20%;
+            bottom: 0;
+            max-width: 1021px;
+            z-index: -1;
+            @include b(tablet) {
+                left: 0;
+            } 
+        }
     }
 
     &__header {
-        padding: 30px 0;
 
         &-wrap {
             display: flex;
@@ -35,12 +39,12 @@
                 display: none;
                 @include b(tablet) {
                     display: block;
-                    z-index: 3;
                 }
 
                 &--open {
                     position: fixed;
                     right: 20px;
+                    z-index: 1;
         
                     .hero__header-btn-line:nth-child(1) {
                         transform: rotate(45deg);
@@ -87,7 +91,7 @@
         display: inline-block;
         line-height: 0;
         @include b(mobile) {
-            z-index: 3;
+            z-index: 2;
         }
 
         &-img {
@@ -101,7 +105,7 @@
         transition: $trs;
         position: relative;
         @include b(tablet) {
-            position: fixed;
+            position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
@@ -109,17 +113,16 @@
             filter: drop-shadow(0 4px 4px rgba(50, 50, 50, .15));
             backdrop-filter: blur(100px);
             width: 320px;
-            z-index: 2;
             padding: 134px 0;
-            transform: translateX(320px);
+            display: none;
         }
         @include b(mobile) {
             width: 100%;
-            transform: translateX(100%);
         }
 
         &--open {
-            transform: translateX(0);
+            display: block;
+            z-index: 1;
         }
 
         &-list{
@@ -210,7 +213,7 @@
         background-repeat: no-repeat;
         background-position-y: bottom;
         position: relative;
-        z-index: 1;
+        // z-index: 1;
 
         &-wrap {
             min-height: calc(100vh - 115px);
@@ -229,6 +232,31 @@
             @include b(desktop) {
                 padding: 40px 46px;
             }
+        }
+    }
+
+    &__circle {
+        width: 100%;
+
+        &-box {
+            position: absolute;
+            left: 411px;
+            top: -50px;
+            max-width: 256px;
+            // z-index: -1;
+            @include b(tablet) {
+                left: 200px;
+                top: 0;
+                width: 200px;
+            }
+            @include b(mobile) {
+               left: 60px;
+            }
+            @include b(mobile-sm) {
+                width: 80px;
+                top: 60px;
+                left: 96px;
+             }
         }
     }
 
@@ -280,28 +308,6 @@
             @include b(mobile) {
                 display: block;
             }
-        }
-    }
-
-    &__circle {
-        position: absolute;
-        left: 21%;
-        top: -60px;
-        width: 256px;
-        height: 257px;
-        z-index: -1;
-        @include b(mobile) {
-           width: 100px;
-           height: 101px;
-           top: 169px;
-        }
-        @include b(mobile-sm) {
-            top: 51px;
-         }
- 
-
-        & svg {
-            width: 100%;
         }
     }
 }
